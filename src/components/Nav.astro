@@ -10,14 +10,12 @@ const textLinks: { label: string; href: string }[] = [
 	{ label: 'About', href: '/about/' },
 ];
 
-/** Icon links to social media — edit these with links to your profiles! */
+/** Icon links to social media — now only LinkedIn, Instagram, Twitter, YouTube. */
 const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[] = [
-	{ label: 'Twitter', href: 'https://twitter.com/me', icon: 'twitter-logo' },
-	{ label: 'Twitch', href: 'https://twitch.tv/me', icon: 'twitch-logo' },
-	{ label: 'GitHub', href: 'https://github.com/me', icon: 'github-logo' },
-	{ label: 'CodePen', href: 'https://codepen.io/me', icon: 'codepen-logo' },
-	{ label: 'dribbble', href: 'https://dribbble.com/me', icon: 'dribbble-logo' },
-	{ label: 'YouTube', href: 'https://www.youtube.com/@me/', icon: 'youtube-logo' },
+	{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/kato-haupeakui/', icon: 'linkedin-logo' },
+	{ label: 'Instagram', href: 'https://www.instagram.com/kakalaakato/', icon: 'instagram-logo' },
+	{ label: 'Twitter', href: 'https://twitter.com/yourprofile', icon: 'twitter-logo' },
+	{ label: 'YouTube', href: 'https://www.youtube.com/@hAUpEAkUi1', icon: 'youtube-logo' },
 ];
 
 /** Test if a link is pointing to the current page. */
@@ -32,8 +30,12 @@ const isCurrentPage = (href: string) => {
 <nav>
 	<div class="menu-header">
 		<a href="/" class="site-title">
-			<Icon icon="terminal-window" color="var(--accent-regular)" size="1.6em" gradient />
-			Jeanine White
+			<img
+			src="/assets/portrait.jpg"
+			alt="Kato Haupeakui"
+			class="profile-photo"
+		/>
+			Kato Haupeakui
 		</a>
 		<menu-button>
 			<template>
@@ -163,7 +165,14 @@ const isCurrentPage = (href: string) => {
 		color: var(--gray-0);
 		text-decoration: none;
 	}
+	
 
+	.profile-photo {
+		width: 1.6em;
+		height: 1.6em;
+		border-radius: 50%;
+		object-fit: cover;
+	}
 	.menu-button {
 		position: relative;
 		display: flex;
@@ -345,6 +354,7 @@ const isCurrentPage = (href: string) => {
 			gap: 0;
 		}
 	}
+
 	@media (forced-colors: active) {
 		.link[aria-current='page'] {
 			color: SelectedItem;
